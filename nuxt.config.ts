@@ -6,9 +6,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  // Netlify deployment preset
+  // Static site generation for Netlify
+  ssr: true,
   nitro: {
-    preset: 'netlify'
+    preset: 'static'
   },
 
   modules: [
