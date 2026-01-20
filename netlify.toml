@@ -1,14 +1,14 @@
 [build]
   command = "npm run generate"
-  publish = "dist"
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirects for SPA fallback
+# 404 fallback
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/200.html"
   status = 200
 
 # Headers for caching static assets
