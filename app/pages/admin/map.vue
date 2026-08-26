@@ -2,7 +2,7 @@
 definePageMeta({ layout: 'admin' })
 useHead({ title: 'HMAB Admin — Map' })
 
-import { Loader } from '@googlemaps/js-api-loader'
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 
 interface GNode { id: string; type: string; name: string; data: Record<string, any> }
 const { data: graph } = await useFetch<{ nodes: GNode[] }>('/api/admin/graph')
@@ -22,10 +22,10 @@ onMounted(async () => {
   }
   const venues = (graph.value?.nodes || []).filter((n) => n.type === 'venue')
   try {
-    const loader = new Loader({ apiKey: config.public.googleMapsApiKey, version: 'weekly' })
-    const { Map, InfoWindow } = await loader.importLibrary('maps')
-    const { AdvancedMarkerElement } = await loader.importLibrary('marker')
-    const { Geocoder } = await loader.importLibrary('geocoding')
+    setOptions({ key: config.public.googleMapsApiKey, v: 'weekly' })
+    const { Map, InfoWindow } = await importLibrary('maps')
+    const { AdvancedMarkerElement } = await importLibrary('marker')
+    const { Geocoder } = await importLibrary('geocoding')
     if (!mapDiv.value) return
 
     const map = new Map(mapDiv.value, {
@@ -41,6 +41,10 @@ onMounted(async () => {
     try { cache = JSON.parse(localStorage.getItem('hmab-geocode') || '{}') } catch {}
 
     async function locate(v: GNode): Promise<{ lat: number; lng: number } | null> {
+      // Coordinates already on the node (e.g. from the OSM sweep) win — no geocode needed.
+      if (typeof v.data.lat === 'number' && typeof v.data.lng === 'number') {
+        return { lat: v.data.lat, lng: v.data.lng }
+      }
       const address = v.data.address || AREA_FALLBACKS[v.data.area]
       if (!address) return null
       if (cache[address]) return cache[address]

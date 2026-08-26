@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Loader } from '@googlemaps/js-api-loader'
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
 import { venues, venueTypes } from '~/data/venues'
 
 const mapDiv = ref<HTMLElement | null>(null)
@@ -14,13 +14,10 @@ onMounted(async () => {
   }
 
   try {
-    const loader = new Loader({
-      apiKey: config.public.googleMapsApiKey,
-      version: 'weekly'
-    })
+    setOptions({ key: config.public.googleMapsApiKey, v: 'weekly' })
 
-    const { Map } = await loader.importLibrary('maps')
-    const { AdvancedMarkerElement } = await loader.importLibrary('marker')
+    const { Map } = await importLibrary('maps')
+    const { AdvancedMarkerElement } = await importLibrary('marker')
 
     if (!mapDiv.value) return
 
