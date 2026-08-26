@@ -23,5 +23,5 @@ export default defineEventHandler(async (event) => {
     .bind(sessionId, link.email, sessionExpiresAt()).run()
   await createSessionCookie(event, sessionId)
 
-  return sendRedirect(event, '/admin/network')
+  return sendRedirect(event, '/board')
 })

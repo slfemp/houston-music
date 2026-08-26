@@ -9,7 +9,10 @@ export default defineNuxtConfig({
   // Cloudflare Pages + D1 (moved off Netlify static, Aug 2026)
   ssr: true,
   nitro: {
-    preset: 'cloudflare-pages'
+    preset: 'cloudflare-pages',
+    // Lets server utils reach the current event (useEvent) — the board
+    // console's useDb() depends on this.
+    experimental: { asyncContext: true }
   },
 
   modules: [

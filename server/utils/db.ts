@@ -1,4 +1,15 @@
 import type { H3Event } from 'h3'
+import { drizzle } from 'drizzle-orm/d1'
+import * as schema from '../database/schema'
+
+// Board-console ORM handle. Relies on nitro's asyncContext (enabled in
+// nuxt.config) so route handlers can call useDb() with no event argument —
+// exactly the calling convention the /board API was written against.
+export function useDb() {
+  const event = useEvent()
+  return drizzle(getDatabase(event), { schema })
+}
+export { schema }
 
 export function getDatabase(event: H3Event): D1Database {
   const cf = (event.context as Record<string, any>).cloudflare

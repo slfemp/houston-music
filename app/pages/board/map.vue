@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'admin' })
+definePageMeta({ layout: 'board', middleware: 'board' })
 useHead({ title: 'HMAB Admin — Map' })
 
 import { setOptions, importLibrary } from '@googlemaps/js-api-loader'
@@ -85,7 +85,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="h-screen flex flex-col">
+  <div class="h-[calc(100vh-9rem)] flex flex-col">
     <div class="px-6 py-4 border-b border-white/10 flex items-center gap-4">
       <h1 class="text-xl font-bold">Venue Map</h1>
       <span class="text-xs text-text-muted">{{ plotted }} plotted<span v-if="pending"> · {{ pending }} geocoding…</span></span>

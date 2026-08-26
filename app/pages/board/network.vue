@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'admin' })
+definePageMeta({ layout: 'board', middleware: 'board' })
 useHead({ title: 'HMAB Admin — Network' })
 
 interface GNode { id: string; type: string; name: string; data: Record<string, any>; status: string }
@@ -152,7 +152,7 @@ async function removeEdge(c: { node: GNode; relation: string; direction: 'out' |
 </script>
 
 <template>
-  <div class="flex h-screen">
+  <div class="flex h-[calc(100vh-9rem)] -mx-4 sm:-mx-6">
     <!-- List column -->
     <div class="w-96 shrink-0 border-r border-white/10 flex flex-col">
       <div class="p-4 border-b border-white/10 space-y-3">

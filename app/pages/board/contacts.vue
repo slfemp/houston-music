@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ layout: 'admin' })
+definePageMeta({ layout: 'board', middleware: 'board' })
 useHead({ title: 'HMAB Admin — Contacts' })
 
 interface Contact { nodeId: string; name: string; type: string; emails: string[]; phones: string[]; notes?: string }
