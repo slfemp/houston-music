@@ -1,75 +1,142 @@
-# Nuxt 3 Minimal Starter
+# Houston Music Advisory Board
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Public website plus an internal board management console.
 
-## Setup
+- **Public site** — events and calendar, musician directory, venue booking
+  directory, volunteer sign-up, merch, plus the existing history/map/directory pages.
+- **Board console** (`/board`) — meetings run under Robert's Rules, motions and
+  recorded roll-call votes, agendas and minutes, issue backlog, finance and
+  treasurer's reports, events with board RSVPs, and moderation queues.
 
-Make sure to install the dependencies:
+Nuxt 4 · Tailwind 4 · Drizzle ORM · SQLite (libSQL) · nuxt-auth-utils
+
+---
+
+## Running it locally
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
+cp .env.example .env          # then set NUXT_SESSION_PASSWORD (32+ chars)
+npm run dev                   # http://localhost:3000
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Generate a session key:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+openssl rand -base64 32
 ```
 
-## Production
+The database is a SQLite file at `.data/board.db`, created automatically.
+**Migrations apply at boot** — no separate migrate step.
 
-Build the application for production:
+### First run — create an account
+
+The console needs a user before you can sign in. Either:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+# Throwaway local login: admin / admin  (dev-only endpoint)
+curl -X POST http://localhost:3000/api/dev/local-admin
 ```
 
-Locally preview production build:
+or bootstrap a real administrator and seed the published board roster:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+curl -X POST http://localhost:3000/api/setup \
+  -H 'content-type: application/json' \
+  -d '{"email":"you@example.com","password":"a-long-password","name":"Your Name"}'
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+`/api/setup` only works on an empty database, so it cannot mint an admin on a
+live system.
+
+### Demo data
+
+```bash
+curl -X POST http://localhost:3000/api/dev/seed-demo     # fill the site
+curl -X POST http://localhost:3000/api/dev/reset-demo \
+  -H 'content-type: application/json' -d '{"keepRoster":true}'   # clear it
+```
+
+Pass `{"keepRoster": false}` to wipe accounts too (the local admin survives).
+The seeder builds the roster itself if one is missing.
+
+Everything under `/api/dev/` is guarded by `import.meta.dev`, which compiles to
+a literal `false` in production — those handlers are dead code in a real build.
+
+---
+
+## How the board rules work
+
+These are enforced in the API, not just the UI, so they hold regardless of
+which client calls them.
+
+| Rule | Behaviour |
+|---|---|
+| **Quorum** | A majority of **regular** seats. Alternates hold seats but are outside the denominator. No quorum, no business. |
+| **Alternates** | May only vote when the chair seats them for a specific meeting in place of a named absent member. |
+| **Precedence** | A motion may only be made if it outranks the pending question. Two main motions cannot be pending at once. |
+| **Seconds** | Required per motion type. The mover cannot second their own motion. |
+| **Thresholds** | Majority = more than half of votes *cast*; abstentions never count against. Two-thirds computed in integers so the boundary is exact. |
+| **Recusal** | Requires a stated conflict of interest, recorded on the roll call. |
+| **Silent voters** | Members present who do not vote are recorded "Present, not voting" rather than omitted. |
+| **Immutability** | A decided motion or adopted minutes cannot be edited — only reconsidered, rescinded, or amended by motion. |
+
+Motion definitions live in `server/utils/motions.ts`; the quorum and standing
+rules in `server/utils/quorum.ts`.
+
+## Money
+
+Integer cents everywhere — never floats. Account balances are **derived from the
+ledger**, not stored, so a running balance cannot drift from its transactions.
+Expenditures at or above the threshold (`expenditureApprovalThresholdCents`,
+default $500) are rejected unless they cite a motion that carried. Treasurer's
+reports snapshot their figures at generation.
+
+## Visibility
+
+Board-only events, unpublished items, un-noticed meetings, and unapproved
+musician submissions are excluded **in the SQL query**, not filtered in the
+template — a rendering mistake cannot leak them. The public musician endpoint
+does not select `email` or `phone` at all.
+
+---
+
+## Project layout
+
+```
+app/
+  components/charts/   BarsH, ColumnsGrouped, MeterRow, ChartCard
+  layouts/board.vue    console shell
+  middleware/board.ts  auth guard
+  pages/               public pages
+  pages/board/         the console
+server/
+  database/schema.ts   19 tables
+  database/migrations/ generated by drizzle-kit
+  api/                 ~65 endpoints
+  utils/               motions, quorum, agenda, money, calendar, auth, db
+  routes/calendar.ics.get.ts
+```
+
+## Charts
+
+The palette is derived from the brand hues, re-stepped into the dark-surface
+lightness band, and validated for colour-vision separation (worst adjacent
+ΔE 18.2). The raw brand cyan and gold sit at OKLCH L 0.82 and glare on dark, so
+chart steps differ from UI accents on purpose. Tokens are `--color-viz-*` in
+`app/assets/css/main.css`. Every chart ships a table view.
+
+## Deployment
+
+`nitro` is left unpinned so the host preset is auto-detected. Set in the host's
+environment:
+
+```
+NUXT_SESSION_PASSWORD=<32+ chars>
+DATABASE_URL=libsql://<your-db>.turso.io
+DATABASE_AUTH_TOKEN=<token>
+```
+
+`netlify.toml` still carries the old static config (`npm run generate` →
+`.output/public`); a hybrid deploy needs `npm run build` instead, since the
+board requires a server. Update it before the next deploy.
