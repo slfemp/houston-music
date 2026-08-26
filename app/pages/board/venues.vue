@@ -59,6 +59,8 @@ const unverified = computed(() => (venues.value as any[]).filter(v => !v.verifie
         <h1 class="font-display text-3xl font-bold">Venues</h1>
         <p class="text-text-secondary text-sm mt-1">
           Booking directory shown at <NuxtLink to="/venues" class="text-electric-blue hover:text-white">/venues</NuxtLink>.
+          Mirrors vetted venues from the <NuxtLink to="/board/network" class="text-electric-blue hover:text-white">Network</NuxtLink> —
+          approving a proposed venue there adds it here.
         </p>
       </div>
       <button v-if="canEdit" class="px-5 py-2.5 rounded-full bg-electric-blue text-space-black font-bold text-sm hover:bg-white transition-colors"
