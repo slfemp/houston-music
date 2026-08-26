@@ -30,25 +30,16 @@ useHead({
           </p>
         </div>
 
-        <!-- Photo Gallery Placeholder -->
-        <div class="grid md:grid-cols-2 gap-6 mb-12">
-          <div class="aspect-[4/3] bg-gradient-to-br from-electric-blue/20 to-electric-purple/20 rounded-2xl border border-white/10 flex items-center justify-center">
-            <div class="text-center text-white/50">
-              <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm7 12l5-4-5-4v8zm-3-8l-3 4 3 4V9z"/>
-              </svg>
-              <p class="mt-2 text-sm">Photo by Marco Torres</p>
-            </div>
+        <!-- Photo Gallery -->
+        <div class="grid md:grid-cols-2 gap-6 mb-4">
+          <div class="aspect-[4/3] rounded-2xl border border-white/10 overflow-hidden">
+            <img src="/images/board/session-jazz-trio.webp" alt="Jazz trio performing at an HMAB listening session" class="w-full h-full object-cover" loading="lazy">
           </div>
-          <div class="aspect-[4/3] bg-gradient-to-br from-electric-purple/20 to-neon-pink/20 rounded-2xl border border-white/10 flex items-center justify-center">
-            <div class="text-center text-white/50">
-              <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm7 12l5-4-5-4v8zm-3-8l-3 4 3 4V9z"/>
-              </svg>
-              <p class="mt-2 text-sm">@MarcoFromHouston</p>
-            </div>
+          <div class="aspect-[4/3] rounded-2xl border border-white/10 overflow-hidden">
+            <img src="/images/board/session-joy-hill.webp" alt="Performer at an HMAB listening session" class="w-full h-full object-cover" loading="lazy">
           </div>
         </div>
+        <p class="text-text-muted text-sm text-center mb-12">Photos by Marco Torres · @MarcoFromHouston</p>
       </div>
     </section>
 

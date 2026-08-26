@@ -7,6 +7,7 @@ const navLinks = [
   { name: 'Bulletin Board', path: '/bulletin-board' },
   { name: 'Music Directory', path: '/music-directory' },
   { name: 'Music History', path: '/music-history' },
+  { name: 'Videos', path: '/videos' },
   { name: 'Map', path: '/map' },
   { name: 'About', path: '/about' },
   { name: 'Donate', path: '/donate' },

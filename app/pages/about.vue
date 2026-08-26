@@ -32,13 +32,8 @@ const inauguralVideoId = ''
             </p>
           </div>
           <div class="relative">
-            <div class="aspect-[4/3] bg-space-gray rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center">
-              <div class="text-center p-8">
-                <svg class="w-20 h-20 mx-auto text-white/20" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                </svg>
-                <p class="mt-4 text-text-muted text-sm">2022 Inaugural Board Members</p>
-              </div>
+            <div class="aspect-[4/3] bg-space-gray rounded-2xl overflow-hidden border border-white/10">
+              <img src="/images/board/board-group.webp" alt="2022 Inaugural Houston Music Advisory Board members" class="w-full h-full object-cover">
             </div>
             <p class="text-text-muted text-sm mt-3 text-center">
               (l-r) Lupe Olivares, Dr. Anne Lundy, Chair Jason Woods, Ericka De Leon, Jason Kane, Henry (G-Dash) Guidry, Tracy DeJarnett, Music Officer Gracie Chavez, Vice-Chair Mark Austin, Jagi Kaital, Eric Jimenez. <em>Photo by Marco Torres</em>
@@ -192,15 +187,11 @@ const inauguralVideoId = ''
             </div>
           </div>
           <div class="order-1 lg:order-2">
-            <div class="aspect-square bg-gradient-to-br from-electric-purple/20 via-electric-blue/20 to-neon-pink/20 rounded-2xl overflow-hidden border border-white/10 relative">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="text-center p-8">
-                  <svg class="w-24 h-24 mx-auto mb-4 text-white/20" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
-                  <p class="font-display font-semibold text-lg text-white">Gracie Chavez</p>
-                  <p class="text-sm text-text-secondary">Board Founder | Founding Music + Cultural Tourism Officer (2022-2025)</p>
-                </div>
+            <div class="aspect-square bg-space-gray rounded-2xl overflow-hidden border border-white/10 relative">
+              <img src="/images/board/gracie-chavez.webp" alt="Gracie Chavez, Board Founder and founding Music + Cultural Tourism Officer" class="w-full h-full object-cover">
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-5 pt-12">
+                <p class="font-display font-semibold text-lg text-white">Gracie Chavez</p>
+                <p class="text-sm text-text-secondary">Board Founder | Founding Music + Cultural Tourism Officer (2022-2025)</p>
               </div>
             </div>
             <p class="text-center text-sm text-text-muted mt-3 italic">Photo by J. Tovar</p>
