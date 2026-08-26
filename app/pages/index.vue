@@ -30,8 +30,8 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
         />
         
         <!-- Dark gradient overlays for text readability -->
-        <div class="absolute inset-0 bg-gradient-to-r from-space-black/90 via-space-black/60 to-transparent"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-space-black via-transparent to-space-black/40"></div>
+        <div class="absolute inset-0 bg-linear-to-r from-space-black/90 via-space-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-space-black via-transparent to-space-black/40"></div>
       </div>
       
       <!-- Content - Left Justified -->
@@ -62,7 +62,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
           </a>
           <NuxtLink 
             to="/bulletin-board"
-            class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 text-center text-lg border border-white/20"
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full hover:bg-white/20 transition-all duration-300 text-center text-lg border border-white/20"
           >
             View Events
           </NuxtLink>
@@ -144,7 +144,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Card 1 -->
           <div class="relative group">
-            <div class="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-electric-blue/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative bg-space-gray p-8 rounded-2xl border border-white/5 group-hover:border-electric-blue/50 transition-all duration-300">
               <!-- Icon -->
               <div class="w-16 h-16 bg-electric-blue/10 rounded-xl flex items-center justify-center mb-6">
@@ -164,7 +164,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
           
           <!-- Card 2 -->
           <div class="relative group">
-            <div class="absolute inset-0 bg-gradient-to-br from-electric-purple/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-electric-purple/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative bg-space-gray p-8 rounded-2xl border border-white/5 group-hover:border-electric-purple/50 transition-all duration-300">
               <!-- Icon -->
               <div class="w-16 h-16 bg-electric-purple/10 rounded-xl flex items-center justify-center mb-6">
@@ -184,7 +184,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
           
           <!-- Card 3 -->
           <div class="relative group">
-            <div class="absolute inset-0 bg-gradient-to-br from-neon-pink/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="absolute inset-0 bg-linear-to-br from-neon-pink/20 to-transparent rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div class="relative bg-space-gray p-8 rounded-2xl border border-white/5 group-hover:border-neon-pink/50 transition-all duration-300">
               <!-- Icon -->
               <div class="w-16 h-16 bg-neon-pink/10 rounded-xl flex items-center justify-center mb-6">
@@ -234,7 +234,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
               </NuxtLink>
               <NuxtLink 
                 to="/music-directory"
-                class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+                class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
               >
                 Join Directory
               </NuxtLink>
@@ -242,7 +242,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
           </div>
 
           <div class="relative">
-            <div class="aspect-square bg-gradient-to-br from-electric-blue/20 via-electric-purple/20 to-neon-pink/20 rounded-2xl flex items-center justify-center border border-white/10">
+            <div class="aspect-square bg-linear-to-br from-electric-blue/20 via-electric-purple/20 to-neon-pink/20 rounded-2xl flex items-center justify-center border border-white/10">
               <svg class="w-32 h-32 text-white/20" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
               </svg>

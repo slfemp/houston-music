@@ -32,7 +32,7 @@ useHead({
 
         <!-- Photo Gallery Placeholder -->
         <div class="grid md:grid-cols-2 gap-6 mb-12">
-          <div class="aspect-[4/3] bg-gradient-to-br from-electric-blue/20 to-electric-purple/20 rounded-2xl border border-white/10 flex items-center justify-center">
+          <div class="aspect-[4/3] bg-linear-to-br from-electric-blue/20 to-electric-purple/20 rounded-2xl border border-white/10 flex items-center justify-center">
             <div class="text-center text-white/50">
               <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm7 12l5-4-5-4v8zm-3-8l-3 4 3 4V9z"/>
@@ -40,7 +40,7 @@ useHead({
               <p class="mt-2 text-sm">Photo by Marco Torres</p>
             </div>
           </div>
-          <div class="aspect-[4/3] bg-gradient-to-br from-electric-purple/20 to-neon-pink/20 rounded-2xl border border-white/10 flex items-center justify-center">
+          <div class="aspect-[4/3] bg-linear-to-br from-electric-purple/20 to-neon-pink/20 rounded-2xl border border-white/10 flex items-center justify-center">
             <div class="text-center text-white/50">
               <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M4 5h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2zm7 12l5-4-5-4v8zm-3-8l-3 4 3 4V9z"/>
@@ -200,7 +200,7 @@ useHead({
             href="https://houston.reel-scout.com/crew_registration.aspx?cl=M&type=B&g=MOCA"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
           >
             Register as Business
           </a>

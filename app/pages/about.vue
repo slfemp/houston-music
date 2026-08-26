@@ -19,7 +19,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
   <div>
     <!-- Hero Section -->
     <section class="relative bg-space-black py-24 md:py-32">
-      <div class="absolute inset-0 bg-gradient-to-br from-electric-purple/10 via-space-black to-electric-blue/5"></div>
+      <div class="absolute inset-0 bg-linear-to-br from-electric-purple/10 via-space-black to-electric-blue/5"></div>
       <div class="relative max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -87,7 +87,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
               :key="officer.name"
               class="bg-space-gray rounded-2xl border border-white/10 p-6 text-center hover:border-electric-blue/50 transition-all"
             >
-              <div class="w-20 h-20 bg-gradient-to-br from-electric-blue/20 to-electric-purple/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/10">
+              <div class="w-20 h-20 bg-linear-to-br from-electric-blue/20 to-electric-purple/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/10">
                 <span class="text-2xl font-bold text-white">
                   {{ officer.name.split(' ').map(n => n[0]).join('') }}
                 </span>
@@ -113,7 +113,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
               :key="member.name"
               class="bg-space-gray rounded-2xl border border-white/10 p-6 text-center hover:border-electric-purple/50 transition-all"
             >
-              <div class="w-16 h-16 bg-gradient-to-br from-electric-purple/20 to-neon-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/10">
+              <div class="w-16 h-16 bg-linear-to-br from-electric-purple/20 to-neon-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/10">
                 <span class="text-xl font-bold text-white">
                   {{ member.name === '(Vacant)' ? '?' : member.name.split(' ').map(n => n[0]).join('') }}
                 </span>
@@ -187,7 +187,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
             </div>
           </div>
           <div class="order-1 lg:order-2">
-            <div class="aspect-square bg-gradient-to-br from-electric-purple/20 via-electric-blue/20 to-neon-pink/20 rounded-2xl overflow-hidden border border-white/10 relative">
+            <div class="aspect-square bg-linear-to-br from-electric-purple/20 via-electric-blue/20 to-neon-pink/20 rounded-2xl overflow-hidden border border-white/10 relative">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="text-center p-8">
                   <svg class="w-24 h-24 mx-auto mb-4 text-white/20" fill="currentColor" viewBox="0 0 24 24">
@@ -291,7 +291,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
           </a>
           <NuxtLink 
             to="/contact"
-            class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
           >
             Contact Us
           </NuxtLink>

@@ -26,7 +26,7 @@ useHead({
           <div>
             <div class="bg-space-gray rounded-2xl border border-white/10 p-8">
               <div class="mb-8 text-center lg:text-left">
-                <div class="w-20 h-20 bg-gradient-to-br from-electric-blue/20 to-electric-purple/20 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4 border border-white/10">
+                <div class="w-20 h-20 bg-linear-to-br from-electric-blue/20 to-electric-purple/20 rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-4 border border-white/10">
                   <svg class="w-10 h-10 text-electric-blue" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
                   </svg>
@@ -68,7 +68,7 @@ useHead({
                     name="name" 
                     required
                     autocomplete="name"
-                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-electric-blue focus:bg-white/10 transition-all"
+                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-hidden focus:border-electric-blue focus:bg-white/10 transition-all"
                     placeholder="Your full name"
                   />
                 </div>
@@ -84,7 +84,7 @@ useHead({
                     name="email" 
                     required
                     autocomplete="email"
-                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-electric-blue focus:bg-white/10 transition-all"
+                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-hidden focus:border-electric-blue focus:bg-white/10 transition-all"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -99,7 +99,7 @@ useHead({
                     id="phone" 
                     name="phone"
                     autocomplete="tel"
-                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-electric-blue focus:bg-white/10 transition-all"
+                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-hidden focus:border-electric-blue focus:bg-white/10 transition-all"
                     placeholder="(555) 555-5555"
                   />
                 </div>
@@ -114,7 +114,7 @@ useHead({
                     name="message" 
                     rows="5" 
                     required
-                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-none focus:border-electric-blue focus:bg-white/10 transition-all resize-y"
+                    class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-white placeholder-text-muted focus:outline-hidden focus:border-electric-blue focus:bg-white/10 transition-all resize-y"
                     placeholder="How can we help you?"
                   ></textarea>
                 </div>
@@ -122,7 +122,7 @@ useHead({
                 <!-- Submit Button -->
                 <button 
                   type="submit"
-                  class="w-full bg-electric-blue text-space-black font-bold px-8 py-4 rounded-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 focus:ring-offset-space-black transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                  class="w-full bg-electric-blue text-space-black font-bold px-8 py-4 rounded-full hover:bg-white focus:outline-hidden focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 focus:ring-offset-space-black transition-all duration-300 hover:scale-105 flex items-center justify-center"
                 >
                   <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -142,7 +142,7 @@ useHead({
             <div class="space-y-8">
               <!-- MOCA -->
               <div class="flex items-start">
-                <div class="w-12 h-12 bg-electric-blue/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-electric-blue/20">
+                <div class="w-12 h-12 bg-electric-blue/10 rounded-xl flex items-center justify-center shrink-0 border border-electric-blue/20">
                   <svg class="w-6 h-6 text-electric-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                   </svg>
@@ -165,7 +165,7 @@ useHead({
 
               <!-- Location -->
               <div class="flex items-start">
-                <div class="w-12 h-12 bg-electric-purple/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-electric-purple/20">
+                <div class="w-12 h-12 bg-electric-purple/10 rounded-xl flex items-center justify-center shrink-0 border border-electric-purple/20">
                   <svg class="w-6 h-6 text-electric-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -181,7 +181,7 @@ useHead({
 
               <!-- Events -->
               <div class="flex items-start">
-                <div class="w-12 h-12 bg-gold-accent/10 rounded-xl flex items-center justify-center flex-shrink-0 border border-gold-accent/20">
+                <div class="w-12 h-12 bg-gold-accent/10 rounded-xl flex items-center justify-center shrink-0 border border-gold-accent/20">
                   <svg class="w-6 h-6 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                   </svg>

@@ -1,0 +1,1 @@
+ALTER TABLE `attendance` ADD `acting_for_member_id` integer;

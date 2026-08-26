@@ -97,7 +97,7 @@ const filteredVenues = computed(() => {
                   {{ venue.name }}
                 </h3>
                 <span 
-                  class="px-2 py-1 text-xs font-medium rounded-full text-white flex-shrink-0 ml-2"
+                  class="px-2 py-1 text-xs font-medium rounded-full text-white shrink-0 ml-2"
                   :style="{ backgroundColor: venueTypes[venue.type]?.color }"
                 >
                   {{ venueTypes[venue.type]?.label }}
@@ -109,7 +109,7 @@ const filteredVenues = computed(() => {
               </p>
 
               <div class="flex items-start text-sm text-text-muted mb-4">
-                <svg class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
@@ -171,7 +171,7 @@ const filteredVenues = computed(() => {
           </a>
           <NuxtLink 
             to="/contact"
-            class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
           >
             Contact Us
           </NuxtLink>

@@ -2,17 +2,20 @@
 const currentYear = new Date().getFullYear()
 
 const quickLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Bulletin Board', path: '/bulletin-board' },
+  { name: 'Events & Calendar', path: '/events' },
+  { name: 'Musicians', path: '/musicians' },
+  { name: 'Venues That Book', path: '/venues' },
   { name: 'Music Directory', path: '/music-directory' },
-  { name: 'Music History', path: '/music-history' }
+  { name: 'Bulletin Board', path: '/bulletin-board' }
 ]
 
 const resourceLinks = [
-  { name: 'Map', path: '/map' },
-  { name: 'About', path: '/about' },
+  { name: 'Volunteer', path: '/volunteer' },
+  { name: 'Merch', path: '/merch' },
   { name: 'Donate', path: '/donate' },
-  { name: 'Contact', path: '/contact' }
+  { name: 'Music History', path: '/music-history' },
+  { name: 'Map', path: '/map' },
+  { name: 'About', path: '/about' }
 ]
 
 const externalLinks = [
@@ -124,9 +127,13 @@ const externalLinks = [
         <div>
           &copy; {{ currentYear }} Houston Music Advisory Board. All rights reserved.
         </div>
-        <div class="flex gap-6">
+        <div class="flex flex-wrap items-center justify-center gap-6">
           <NuxtLink to="/contact" class="hover:text-electric-blue transition-colors">
             Contact
+          </NuxtLink>
+          <!-- Discreet, not hidden: members need a way in without it competing with public CTAs -->
+          <NuxtLink to="/board" class="hover:text-electric-blue transition-colors">
+            Board Portal
           </NuxtLink>
           <a 
             href="https://forms.gle/Jg92Ms4wnG7ZaSXz5"

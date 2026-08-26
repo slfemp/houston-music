@@ -8,7 +8,7 @@ defineProps<{
 
 const variantClasses = {
   primary: 'bg-electric-blue text-space-black hover:bg-white hover:scale-105',
-  secondary: 'bg-white/10 backdrop-blur text-white border border-white/20 hover:bg-white/20',
+  secondary: 'bg-white/10 backdrop-blur-sm text-white border border-white/20 hover:bg-white/20',
   accent: 'bg-electric-purple text-white hover:bg-neon-pink hover:scale-105',
   gold: 'bg-gold-accent text-space-black hover:bg-white hover:scale-105'
 }

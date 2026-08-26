@@ -26,7 +26,7 @@ const backgroundImage = computed(() => props.image ?? '/images/htownskyline.jpg'
       />
       <div 
         v-if="overlay !== false"
-        class="absolute inset-0 bg-gradient-to-b from-space-black/70 via-space-black/40 to-space-black"
+        class="absolute inset-0 bg-linear-to-b from-space-black/70 via-space-black/40 to-space-black"
       />
     </div>
 

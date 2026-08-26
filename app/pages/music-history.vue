@@ -192,7 +192,7 @@ useHead({
           </NuxtLink>
           <NuxtLink 
             to="/bulletin-board"
-            class="px-8 py-4 bg-white/10 backdrop-blur text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
           >
             Attend an Event
           </NuxtLink>

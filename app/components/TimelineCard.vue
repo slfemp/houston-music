@@ -21,7 +21,7 @@ defineProps<{
       <!-- Fallback when no image -->
       <div 
         v-if="!event.image"
-        class="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-electric-blue/20 to-electric-purple/20"
+        class="absolute inset-0 flex items-center justify-center bg-linear-to-br from-electric-blue/20 to-electric-purple/20"
       >
         <svg class="w-16 h-16 text-white/30" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
@@ -29,7 +29,7 @@ defineProps<{
       </div>
       
       <!-- Gradient overlay on hover -->
-      <div class="absolute inset-0 bg-gradient-to-t from-space-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div class="absolute inset-0 bg-linear-to-t from-space-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       <!-- Year badge -->
       <div class="absolute top-3 left-3">
