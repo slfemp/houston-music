@@ -8,8 +8,10 @@ export default defineEventHandler(async (event) => {
     db.prepare('SELECT from_id, to_id, relation FROM edges').all(),
   ])
 
+  // Per-row parse guard: one malformed data blob must not 500 the whole graph.
+  const parse = (s: string) => { try { return JSON.parse(s || '{}') } catch { return {} } }
   return {
-    nodes: (nodes.results || []).map((n: any) => ({ ...n, data: JSON.parse(n.data || '{}') })),
+    nodes: (nodes.results || []).map((n: any) => ({ ...n, data: parse(n.data) })),
     edges: edges.results || [],
   }
 })
