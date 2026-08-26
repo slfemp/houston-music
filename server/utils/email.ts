@@ -12,7 +12,7 @@ export async function sendEmail(event: import('h3').H3Event, opts: {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
     body: {
-      from: opts.from || 'HMAB Admin <noreply@slfemp.studio>',
+      from: opts.from || 'Houston Music Advisory Board <noreply@houstonmusicadvisoryboard.com>',
       to: Array.isArray(opts.to) ? opts.to : [opts.to],
       subject: opts.subject,
       html: opts.html,
