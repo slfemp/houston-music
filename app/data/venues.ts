@@ -122,12 +122,12 @@ export const venues: Venue[] = [
   },
   {
     id: 12,
-    name: 'Warehouse Live',
-    address: '813 St Emanuel St, Houston, TX 77003',
-    lat: 29.7519,
-    lng: -95.3525,
+    name: 'Warehouse Live Midtown',
+    address: '2600 Travis St, Houston, TX 77006',
+    lat: 29.7443,
+    lng: -95.3776,
     type: 'venue',
-    description: 'Multi-room concert venue in EaDo',
+    description: 'Multi-room concert venue, relocated to Midtown (the original EaDo location closed)',
     website: 'https://warehouselive.com/'
   }
 ]

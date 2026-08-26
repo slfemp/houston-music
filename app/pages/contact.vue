@@ -2,12 +2,30 @@
 useHead({
   title: 'Contact - Houston Music Advisory Board',
   meta: [
-    { 
-      name: 'description', 
-      content: 'Contact the Houston Music Advisory Board. Have questions about Houston\'s music community? We want to hear from you.' 
+    {
+      name: 'description',
+      content: 'Contact the Houston Music Advisory Board. Have questions about Houston\'s music community? We want to hear from you.'
     }
   ]
 })
+
+const sending = ref(false)
+const sendError = ref('')
+
+async function submitContact(e: Event) {
+  sendError.value = ''
+  sending.value = true
+  try {
+    const form = e.target as HTMLFormElement
+    const data = Object.fromEntries(new FormData(form).entries())
+    await $fetch('/api/contact', { method: 'POST', body: data })
+    navigateTo('/success')
+  } catch (err: any) {
+    sendError.value = err?.data?.statusMessage || 'Something went wrong — please try again.'
+  } finally {
+    sending.value = false
+  }
+}
 </script>
 
 <template>
@@ -40,20 +58,14 @@ useHead({
                 </p>
               </div>
 
-              <!-- Netlify Form -->
-              <form 
-                name="contact" 
-                method="POST" 
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                action="/success"
+              <form
+                name="contact"
                 class="space-y-6"
+                @submit.prevent="submitContact"
               >
-                <!-- Hidden fields for Netlify -->
-                <input type="hidden" name="form-name" value="contact" />
-                <p class="hidden">
+                <p class="hidden" aria-hidden="true">
                   <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
+                    Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off" />
                   </label>
                 </p>
 
@@ -120,9 +132,11 @@ useHead({
                 </div>
 
                 <!-- Submit Button -->
-                <button 
+                <p v-if="sendError" class="text-neon-pink text-sm">{{ sendError }}</p>
+                <button
                   type="submit"
-                  class="w-full bg-electric-blue text-space-black font-bold px-8 py-4 rounded-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 focus:ring-offset-space-black transition-all duration-300 hover:scale-105 flex items-center justify-center"
+                  :disabled="sending"
+                  class="w-full bg-electric-blue text-space-black font-bold px-8 py-4 rounded-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-electric-blue focus:ring-offset-2 focus:ring-offset-space-black transition-all duration-300 hover:scale-105 flex items-center justify-center disabled:opacity-60"
                 >
                   <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -150,7 +164,7 @@ useHead({
                 <div class="ml-4">
                   <h3 class="font-semibold text-white">Mayor's Office of Cultural Affairs</h3>
                   <p class="text-text-secondary mt-1">
-                    The Houston Music Advisory Board operates under MOCA.
+                    The Houston Music Advisory Board is a City of Houston board established by city ordinance in 2022.
                   </p>
                   <a 
                     href="https://www.houstontx.gov/moca/" 

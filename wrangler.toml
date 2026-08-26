@@ -1,0 +1,11 @@
+# Houston Music Advisory Board — Cloudflare Pages + D1
+# Deploy: npm run deploy  (CLOUDFLARE_ACCOUNT_ID env, never account_id here — wrangler 4.7x+ Pages configs reject it)
+name = "houston-music"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "houston-music-db"
+database_id = "33211b03-ba2c-4e83-85d9-6800e3cf7306"

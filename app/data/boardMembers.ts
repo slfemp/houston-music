@@ -37,16 +37,16 @@ export const boardMembers = {
       organization: 'Hip Hop Vintage Flea Market, Bgirl City'
     },
     {
-      name: 'Tracy DeJarnett',
-      organization: 'Houston Live, SongFest'
-    },
-    {
       name: 'Henry Guidry',
       organization: 'SwishaHouse'
     },
     {
       name: 'Jagi Kaital',
       organization: 'White Oak Music Hall'
+    },
+    {
+      name: '(Vacant)',
+      organization: ''
     },
     {
       name: '(Vacant)',
@@ -70,6 +70,12 @@ export const boardMembers = {
   ] as BoardMember[],
   
   alumni: [
+    {
+      name: 'Tracy DeJarnett',
+      years: '2022-2025',
+      position: 'Board Secretary (2024)',
+      organization: 'HoustonLive, Houston Bluesfest'
+    },
     {
       name: 'Mark Austin',
       years: '2022-2025',
@@ -101,9 +107,11 @@ export const boardMembers = {
 
 export const musicOfficer = {
   name: 'Gracie Chavez',
-  title: 'Music + Cultural Tourism Officer',
+  title: 'Board Founder | Founding Music + Cultural Tourism Officer (2022-2025)',
   department: "Mayor's Office of Cultural Affairs (MOCA)",
   bio: `To achieve this work of advancing Houston's music industry and support cultural tourism, established musician and community advocate Gracie Chavez joined MOCA as the City's founding Music + Cultural Tourism Officer in 2022.
 
-That same year, she devised the concept of a music board and drafted the city ordinance to establish Houston's Music Advisory Board, which City Council unanimously approved. The Music Board reports to and provides music industry recommendations to the Music Officer.`
+That same year, she devised the concept of a music board and drafted the city ordinance to establish Houston's Music Advisory Board, which City Council unanimously approved.
+
+Gracie served as Music Officer through January 2025 and continues to lead the board as its Founder. The Music Officer role is currently vacant — restoring it, and the city's cultural affairs office, is an active priority the board has advocated for before City Council's Arts + Culture Committee.`
 }

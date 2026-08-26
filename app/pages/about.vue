@@ -12,7 +12,8 @@ useHead({
 })
 
 // Video placeholder
-const inauguralVideoId = 'YOUR_VIDEO_ID'
+// Empty string hides the embed until a real recording is linked
+const inauguralVideoId = ''
 </script>
 
 <template>
@@ -109,8 +110,8 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
           </h3>
           <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             <div 
-              v-for="member in boardMembers.members" 
-              :key="member.name"
+              v-for="(member, i) in boardMembers.members"
+              :key="member.name + i"
               class="bg-space-gray rounded-2xl border border-white/10 p-6 text-center hover:border-electric-purple/50 transition-all"
             >
               <div class="w-16 h-16 bg-gradient-to-br from-electric-purple/20 to-neon-pink/20 rounded-full mx-auto mb-4 flex items-center justify-center border border-white/10">
@@ -166,18 +167,22 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
       <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div class="order-2 lg:order-1">
-            <SectionHeading title="MUSIC OFFICER" />
-            
+            <SectionHeading title="BOARD FOUNDER" />
+
             <div class="space-y-6 text-text-secondary text-lg leading-relaxed">
               <p>
-                To achieve this work of advancing Houston's music industry and support cultural tourism, 
-                established musician and community advocate <strong class="text-electric-blue">Gracie Chavez</strong> 
+                To achieve this work of advancing Houston's music industry and support cultural tourism,
+                established musician and community advocate <strong class="text-electric-blue">Gracie Chavez</strong>
                 joined MOCA as the City's founding Music + Cultural Tourism Officer in 2022.
               </p>
               <p>
-                That same year, she devised the concept of a music board and drafted the city ordinance 
-                to establish Houston's Music Advisory Board, which City Council unanimously approved. 
-                The Music Board reports to and provides music industry recommendations to the Music Officer.
+                That same year, she devised the concept of a music board and drafted the city ordinance
+                to establish Houston's Music Advisory Board, which City Council unanimously approved.
+              </p>
+              <p>
+                Gracie served as Music Officer through January 2025 and continues to lead the board as its
+                Founder. The Music Officer role is currently vacant — restoring it, and the city's cultural
+                affairs office, is an active priority the board has taken to City Council's Arts + Culture Committee.
               </p>
               <p>
                 If you have questions or want to get involved, we want to hear from you. Please 
@@ -194,7 +199,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
                     <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   </svg>
                   <p class="font-display font-semibold text-lg text-white">Gracie Chavez</p>
-                  <p class="text-sm text-text-secondary">Music + Cultural Tourism Officer</p>
+                  <p class="text-sm text-text-secondary">Board Founder | Founding Music + Cultural Tourism Officer (2022-2025)</p>
                 </div>
               </div>
             </div>
@@ -256,7 +261,7 @@ const inauguralVideoId = 'YOUR_VIDEO_ID'
     </section>
 
     <!-- Video Section -->
-    <section class="py-24 bg-space-dark">
+    <section v-if="inauguralVideoId" class="py-24 bg-space-dark">
       <div class="max-w-4xl mx-auto px-6 md:px-8 lg:px-12">
         <SectionHeading 
           title="2022 INAUGURAL LISTENING SESSION" 

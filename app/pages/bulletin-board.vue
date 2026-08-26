@@ -11,9 +11,9 @@ useHead({
   ]
 })
 
-// Video placeholders
-const hipHop50VideoId = 'YOUR_VIDEO_ID'
-const donnieHoustonVideoId = 'YOUR_VIDEO_ID'
+// Video IDs — empty string hides the embed until a real recording is linked
+const hipHop50VideoId = ''
+const donnieHoustonVideoId = ''
 </script>
 
 <template>
@@ -83,20 +83,22 @@ const donnieHoustonVideoId = 'YOUR_VIDEO_ID'
     </section>
 
     <!-- 2023 Houston Music Preservation -->
-    <section class="py-24 bg-space-dark">
+    <section v-if="hipHop50VideoId || donnieHoustonVideoId" class="py-24 bg-space-dark">
       <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <SectionHeading 
           title="2023 HOUSTON MUSIC PRESERVATION" 
           centered 
         />
 
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <VideoEmbed 
+        <div class="grid gap-8 max-w-5xl mx-auto" :class="hipHop50VideoId && donnieHoustonVideoId ? 'md:grid-cols-2' : ''">
+          <VideoEmbed
+            v-if="hipHop50VideoId"
             :src="`https://www.youtube.com/embed/${hipHop50VideoId}`"
             title="Houston's Hip Hop 50th Anniversary"
             caption="Houston's Hip Hop 50th Anniversary, 2023 @donnie_houston Podcast"
           />
-          <VideoEmbed 
+          <VideoEmbed
+            v-if="donnieHoustonVideoId"
             :src="`https://www.youtube.com/embed/${donnieHoustonVideoId}`"
             title="Donnie Houston Podcast"
             caption="Recorded live at MATCH Houston with Donnie Houston Podcast, 2023"

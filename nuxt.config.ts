@@ -6,10 +6,10 @@ export default defineNuxtConfig({
     compatibilityVersion: 4
   },
 
-  // Static site generation for Netlify
+  // Cloudflare Pages + D1 (moved off Netlify static, Aug 2026)
   ssr: true,
   nitro: {
-    preset: 'static'
+    preset: 'cloudflare-pages'
   },
 
   modules: [

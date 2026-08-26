@@ -10,10 +10,11 @@ useHead({
 })
 
 // Video placeholders - replace with actual YouTube video IDs
-const heroVideoId = 'YOUR_VIDEO_ID' // Listening Session at Cactus Music 2024
-const soundSyncVideoId = 'YOUR_VIDEO_ID' // SoundSync Music video
-const soundDiplomacyVideoId = 'YOUR_VIDEO_ID' // Sound Diplomacy video
-const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
+// Video IDs — empty string hides the embed until a real recording is linked
+const heroVideoId = '' // Listening Session at Cactus Music 2024
+const soundSyncVideoId = 'fA0SVrftmds' // SoundSync Sync Licensing Workshop, DeLuxe Theater 2024
+const soundDiplomacyVideoId = '' // Sound Diplomacy video
+const preservationVideoId = '' // Donnie Houston Podcast video
 </script>
 
 <template>
@@ -115,16 +116,16 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
     </section>
 
     <!-- Featured Video Section -->
-    <section class="py-24 md:py-32 bg-space-black">
+    <section v-if="heroVideoId" class="py-24 md:py-32 bg-space-black">
       <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
-        <SectionHeading 
+        <SectionHeading
           title="Latest from HMAB"
           subtitle="Watch recordings from our listening sessions and community events"
           centered
         />
-        
+
         <div class="max-w-4xl mx-auto">
-          <VideoEmbed 
+          <VideoEmbed
             :src="`https://www.youtube.com/embed/${heroVideoId}`"
             title="Listening Session at Cactus Music"
             caption="Listening Session Recorded live at Cactus Music with Houston Music Advisory Board and Community, 2024"
@@ -293,14 +294,16 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
           centered 
         />
         
-        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <VideoEmbed 
+        <div class="grid gap-8 max-w-5xl mx-auto" :class="soundSyncVideoId && soundDiplomacyVideoId ? 'md:grid-cols-2' : ''">
+          <VideoEmbed
+            v-if="soundSyncVideoId"
             :src="`https://www.youtube.com/embed/${soundSyncVideoId}`"
             title="SoundSync Music Workshop"
             caption="Recorded live at The DeLuxe Theater with SoundSync Music, 2024"
             caption-link="https://www.soundsyncmusic.com/"
           />
-          <VideoEmbed 
+          <VideoEmbed
+            v-if="soundDiplomacyVideoId"
             :src="`https://www.youtube.com/embed/${soundDiplomacyVideoId}`"
             title="Sound Diplomacy Forum"
             caption="Recorded live at Off the Record with Sound Diplomacy, 2024"
@@ -311,7 +314,7 @@ const preservationVideoId = 'YOUR_VIDEO_ID' // Donnie Houston Podcast video
     </section>
 
     <!-- Music Preservation Section -->
-    <section class="py-24 md:py-32 bg-space-dark">
+    <section v-if="preservationVideoId" class="py-24 md:py-32 bg-space-dark">
       <div class="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         <SectionHeading 
           title="MUSIC PRESERVATION 2023" 

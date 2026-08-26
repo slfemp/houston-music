@@ -38,7 +38,7 @@ const externalLinks = [
           <!-- Social icons placeholder -->
           <div class="flex gap-4">
             <a 
-              href="https://www.instagram.com/houstonmusicadvisoryboard/"
+              href="https://www.instagram.com/hmabtx/"
               target="_blank"
               rel="noopener noreferrer"
               class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-electric-blue/20 hover:text-electric-blue transition-all text-text-secondary"

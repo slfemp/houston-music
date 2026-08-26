@@ -11,6 +11,51 @@ export interface Event {
 
 export const events: Event[] = [
   {
+    id: 12,
+    date: '2026-11-05',
+    title: 'Texas Sounds & Cities Conference (Texas Music Office)',
+    description: 'The Texas Music Office\'s annual gathering of Music Friendly Texas communities — two days of industry programming, Nov 5-6. HMAB attends representing Houston.',
+    time: 'All Day',
+    location: 'Dallas, TX',
+    category: 'event'
+  },
+  {
+    id: 11,
+    date: '2026-10-04',
+    title: '4th Annual Houston Bluesfest',
+    description: 'Houston Bluesfest moves to its new home at POST Houston. Produced by HoustonLive.',
+    time: 'Evening',
+    location: 'POST Houston, 401 Franklin St, 77201',
+    category: 'event'
+  },
+  {
+    id: 10,
+    date: '2026-08-25',
+    title: 'HMAB Board Meeting',
+    description: 'Regular meeting of the Houston Music Advisory Board — recruit updates, financial report, 2026 focus programming, social media metrics, and website.',
+    time: '6:30-8:30PM',
+    location: 'Houston, TX',
+    category: 'meeting'
+  },
+  {
+    id: 13,
+    date: '2026-06-21',
+    title: 'Make Music Day Houston 2026',
+    description: 'The 6th annual citywide celebration of free music on the first day of summer, with FIFA World Cup-inspired programming. Kickoff ceremony at Toros HTX with a City proclamation.',
+    time: '11AM',
+    location: 'Multiple Locations, Houston, TX',
+    category: 'event'
+  },
+  {
+    id: 14,
+    date: '2025-12-05',
+    title: '2025 Listening Session — Beats on the Bayou',
+    description: 'Annual public listening session held inside the Beats on the Bayou concert night at East River. Board Q&A followed by live music on the bayou.',
+    time: '5:45-9PM',
+    location: 'East River, 2920 Riverby St, Houston, TX',
+    category: 'event'
+  },
+  {
     id: 1,
     date: '2024-11-13',
     title: 'Arts + Culture Committee Meeting',
@@ -96,6 +141,16 @@ export const events: Event[] = [
 ]
 
 export const archives = {
+  '2025': {
+    title: '2025 Public Meetings + Community Events',
+    items: [
+      'Listening Session + Townhall at Beats on the Bayou, East River (12/5)',
+      'Texas Sounds & Cities Conference, Corpus Christi — HMAB delegation (11/5-11/6)',
+      'Miller Summer Mixtape — HMAB community picnic, Miller Outdoor Theatre (8/16)',
+      'Make Music Day Houston kickoff, Julep on Washington (6/21)',
+      'Arts + Culture Committee — public comment on restoring the Office of Cultural Affairs (5/22)'
+    ]
+  },
   '2024': {
     title: '2024 Public Meetings - Houston Music Business Development, Grants + Funding',
     items: [
@@ -141,7 +196,7 @@ export const musicResources = {
   organizations: {
     title: 'MUSIC ORGANIZATIONS',
     items: [
-      { name: 'Union: Houston Professional Musicians\' Association', url: '#' },
+      { name: 'Union: Houston Professional Musicians\' Association (AFM Local 65-699)', url: 'https://www.houstonmusicians.org/' },
       { name: 'Texas Accountants & Lawyers for the Arts', url: 'https://talarts.org/' },
       { name: 'American Society of Composers, Authors and Publishers (ASCAP)', url: 'https://www.ascap.com/' },
       { name: 'Broadcast Music, Inc. (BMI)', url: 'https://www.bmi.com/' }

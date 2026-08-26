@@ -6,15 +6,18 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "preview": "wrangler pages dev dist --persist-to .wrangler/state",
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt build && wrangler pages deploy dist --project-name houston-music"
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^2.0.2",
-    "nuxt": "^3.20.2",
-    "vue": "latest"
+    "nuxt": "4.3.1",
+    "vue": "latest",
+    "nitropack": "^2.11.8"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.14.0"
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "wrangler": "^4.110.0"
   }
 }
