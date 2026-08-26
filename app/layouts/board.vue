@@ -17,6 +17,7 @@ const links = computed(() => [
   { to: '/board/members', label: 'Members' },
   // Intelligence — the Houston music network graph
   { to: '/board/network', label: 'Network' },
+  { to: '/board/graph', label: 'Graph' },
   { to: '/board/map', label: 'Map' },
   { to: '/board/contacts', label: 'Contacts' },
 ])
