@@ -32,7 +32,7 @@ async function signOut() {
 <template>
   <div class="min-h-screen bg-space-black text-white flex flex-col">
     <header class="border-b border-white/10 bg-space-dark/95 backdrop-blur-sm sticky top-0 z-40">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="px-4 sm:px-6">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center gap-3 min-w-0">
             <NuxtLink to="/board" class="font-display font-bold text-lg text-white shrink-0">
@@ -80,12 +80,12 @@ async function signOut() {
       </div>
     </header>
 
-    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-8">
+    <main class="flex-1 w-full px-4 sm:px-6 py-8">
       <slot />
     </main>
 
     <footer class="border-t border-white/10 py-4">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-wrap gap-x-4 gap-y-1 justify-between text-xs text-text-muted">
+      <div class="px-4 sm:px-6 flex flex-wrap gap-x-4 gap-y-1 justify-between text-xs text-text-muted">
         <span>Houston Music Advisory Board — internal console</span>
         <NuxtLink to="/" class="hover:text-electric-blue transition-colors">View public site →</NuxtLink>
       </div>
