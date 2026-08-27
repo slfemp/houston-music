@@ -11,22 +11,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Primary - Deep space blacks and dark grays
-        'space-black': '#000000',
-        'space-dark': '#0B0B0D',
-        'space-gray': '#1a1a1a',
-        'space-gray-light': '#2a2a2a',
-        
+        // Surfaces + text are CSS-variable driven so the board console can flip
+        // to light mode (html.hmab-light). Defaults in main.css keep the public
+        // site permanently on the dark brand.
+        white: 'rgb(var(--hm-ink) / <alpha-value>)',
+        'space-black': 'rgb(var(--hm-bg) / <alpha-value>)',
+        'space-dark': 'rgb(var(--hm-bg-2) / <alpha-value>)',
+        'space-gray': 'rgb(var(--hm-surface) / <alpha-value>)',
+        'space-gray-light': 'rgb(var(--hm-surface-2) / <alpha-value>)',
+
         // Accent - Vibrant blues and purples (music + space)
         'electric-blue': '#00D9FF',
         'electric-purple': '#9D4EDD',
         'neon-pink': '#FF006E',
         'gold-accent': '#FFB700',
-        
+
         // Text
-        'text-primary': '#FFFFFF',
-        'text-secondary': '#B4B4B4',
-        'text-muted': '#6B7280',
+        'text-primary': 'rgb(var(--hm-ink) / <alpha-value>)',
+        'text-secondary': 'rgb(var(--hm-text-2) / <alpha-value>)',
+        'text-muted': 'rgb(var(--hm-text-3) / <alpha-value>)',
 
         // Legacy colors (for gradual migration)
         primary: {

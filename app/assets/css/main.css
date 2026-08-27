@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme variables. Dark is the default everywhere (the public site's brand);
+   the board console toggles html.hmab-light for light mode. */
+:root {
+  --hm-ink: 255 255 255;        /* text-white / text-primary */
+  --hm-bg: 0 0 0;               /* space-black */
+  --hm-bg-2: 11 11 13;          /* space-dark */
+  --hm-surface: 26 26 26;       /* space-gray */
+  --hm-surface-2: 42 42 42;     /* space-gray-light */
+  --hm-text-2: 180 180 180;     /* text-secondary */
+  --hm-text-3: 107 114 128;     /* text-muted */
+}
+
+html.hmab-light {
+  --hm-ink: 15 23 42;
+  --hm-bg: 241 245 249;
+  --hm-bg-2: 255 255 255;
+  --hm-surface: 255 255 255;
+  --hm-surface-2: 226 232 240;
+  --hm-text-2: 51 65 85;
+  --hm-text-3: 100 116 139;
+}
+
+/* Accent buttons keep dark text and dark hover regardless of theme —
+   `white`/`space-black` become semantic ink/bg above, so pin the two
+   utilities that mean literal colors on accent surfaces. */
+html.hmab-light .text-space-black { color: #0b0b0d; }
+html.hmab-light .hover\:bg-white:hover { background-color: #0b0b0d; color: #f8fafc; }
+
 /* Custom base styles */
 @layer base {
   html {
