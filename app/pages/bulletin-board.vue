@@ -12,8 +12,8 @@ useHead({
 })
 
 // Video IDs — empty string hides the embed until a real recording is linked
-const hipHop50VideoId = ''
-const donnieHoustonVideoId = ''
+const hipHop50VideoId = 'AZizCV7r0EI'
+const donnieHoustonVideoId = 'bFejVYhHfnk'
 </script>
 
 <template>

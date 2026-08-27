@@ -13,7 +13,7 @@ useHead({
 
 // Video placeholder
 // Empty string hides the embed until a real recording is linked
-const inauguralVideoId = ''
+const inauguralVideoId = 'jUR-kb2WuTo'
 </script>
 
 <template>

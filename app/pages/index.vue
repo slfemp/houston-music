@@ -11,10 +11,10 @@ useHead({
 
 // Video placeholders - replace with actual YouTube video IDs
 // Video IDs — empty string hides the embed until a real recording is linked
-const heroVideoId = '' // Listening Session at Cactus Music 2024
+const heroVideoId = '0lFxo7MZAD0' // 2024 Listening Session at Cactus Music
 const soundSyncVideoId = 'fA0SVrftmds' // SoundSync Sync Licensing Workshop, DeLuxe Theater 2024
-const soundDiplomacyVideoId = '' // Sound Diplomacy video
-const preservationVideoId = '' // Donnie Houston Podcast video
+const soundDiplomacyVideoId = 'mk9gn_cSXAQ' // Music City Forum with Sound Diplomacy
+const preservationVideoId = 'bFejVYhHfnk' // Preserving Houston panel w/ Donnie Houston Podcast
 </script>
 
 <template>
@@ -264,7 +264,7 @@ const preservationVideoId = '' // Donnie Houston Podcast video
         
         <div class="max-w-2xl mx-auto text-center">
           <a 
-            href="https://houston-music.live/wp-content/uploads/2024/09/Music-Program-MOCA-2024-Art-Culture-Committee-FIN.pdf"
+            href="/docs/Music-Program-MOCA-2024-Art-Culture-Committee-FIN.pdf"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center px-8 py-6 bg-space-gray text-white rounded-2xl border border-white/10 hover:border-electric-blue/50 transition-all duration-300 group hover:shadow-2xl hover:shadow-electric-blue/10"
