@@ -9,3 +9,7 @@ compatibility_flags = ["nodejs_compat", "enable_nodejs_process_v2"]
 binding = "DB"
 database_name = "houston-music-db"
 database_id = "33211b03-ba2c-4e83-85d9-6800e3cf7306"
+
+[[r2_buckets]]
+binding = "DOCS"
+bucket_name = "houston-music-docs"
